@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-400: #d4a843;
+  --color-gold-500: #c9952e;
+  --color-gold-600: #b8860b;
+  --color-gold-700: #9a7000;
+  --color-dark-800: #1a1a1a;
+  --color-dark-850: #141414;
+  --color-dark-900: #0d0d0d;
+  --color-dark-950: #080808;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b8860b #1a1a1a;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+*::-webkit-scrollbar-thumb {
+  background: #b8860b;
+  border-radius: 3px;
+}
+
+body {
+  background-color: #080808;
+  color: #e5e5e5;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+.horus-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%);
+  overflow: hidden;
+}
+
+.horus-eye-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  opacity: 0.15;
+  pointer-events: none;
+  filter: drop-shadow(0 0 30px rgba(184, 134, 11, 0.4));
+  animation: float 8s ease-in-out infinite;
+}
+
+.horus-eye-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mask-image: radial-gradient(circle, black 50%, transparent 100%);
+}
+
+.mystical-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(184, 134, 11, 0.05) 0%, transparent 10%),
+    radial-gradient(circle at 80% 70%, rgba(184, 134, 11, 0.05) 0%, transparent 10%),
+    radial-gradient(circle at 50% 20%, rgba(184, 134, 11, 0.05) 0%, transparent 10%);
+  animation: pulse-gold 5s ease-in-out infinite;
+}
+
+@keyframes mystical-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.mystical-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  border: 1px solid rgba(184, 134, 11, 0.1);
+  border-radius: 50%;
+  animation: mystical-rotate 20s linear infinite;
+}
+
+@keyframes golden-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(184, 134, 11, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(184, 134, 11, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.golden-glow {
+  animation: golden-glow 3s ease-in-out infinite;
+}
+
+.float-anim {
+  animation: float 4s ease-in-out infinite;
+}
+
+.pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #d4a843, #f5d78e, #b8860b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-border {
+  border: 1px solid rgba(184, 134, 11, 0.4);
+}
+
+.gold-border:focus {
+  border-color: #b8860b;
+  box-shadow: 0 0 15px rgba(184, 134, 11, 0.3);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #b8860b, #d4a843);
+  color: #000;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #d4a843, #f5d78e);
+  box-shadow: 0 0 25px rgba(184, 134, 11, 0.5);
+  transform: translateY(-1px);
+}
+
+.card-dark {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(184, 134, 11, 0.2);
+  backdrop-filter: blur(10px);
+}
